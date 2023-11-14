@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "527243139289",
+    "project_id": "chatflut-4ec1e",
+    "storage_bucket": "chatflut-4ec1e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:527243139289:android:924fbd5bc827f3c9dcc6c8",
+        "android_client_info": {
+          "package_name": "com.example.chatflut"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7BP_vdO5PpfLQ9BNJVTGmgyDsHEFb8pM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

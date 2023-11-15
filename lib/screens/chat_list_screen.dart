@@ -1,14 +1,15 @@
-// import 'dart:js';
 
 import 'package:chatflut/screens/chat_screen.dart';
 import 'package:chatflut/services/auth/auth_service.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
-class MainScreen extends StatelessWidget {
-  const MainScreen({super.key});
+
+class ChatListScreen extends StatelessWidget {
+  const ChatListScreen({super.key});
   @override
   Widget build(BuildContext context) {
     //handle signout
@@ -18,26 +19,49 @@ class MainScreen extends StatelessWidget {
       authService.signOut();
     }
 
+    // return Scaffold(
+    //   // appBar: AppBar(
+    //   //   title: Text("Timeline"),
+    //   //   actions: [
+    //   //     //sign out button
+    //   //     IconButton(onPressed: signOut, icon: const Icon(Icons.logout))
+    //   //   ],
+    //   // ),
+    //   backgroundColor: Colors.grey[300],
+    //   body: _buildUserList(context),
+    //   // body: const Padding(
+    //   //   padding: EdgeInsets.symmetric(horizontal: 25.0),
+    //   //   child: SafeArea(
+    //   //       child: Center(
+    //   //     child: Column(
+    //   //       mainAxisAlignment: MainAxisAlignment.center,
+    //   //       children: [],
+    //   //     ),
+    //   //   )),
+    //   // ),
+    // );
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Timeline"),
-        actions: [
-          //sign out button
-          IconButton(onPressed: signOut, icon: const Icon(Icons.logout))
-        ],
+      body: AnnotatedRegion<SystemUiOverlayStyle>(
+        value: SystemUiOverlayStyle.light.copyWith(
+          statusBarColor: Colors.transparent, // Status bar transparan
+        ),
+        child: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [Colors.blue, Colors.green],
+            ),
+          ),
+          child: _buildUserList(context),
+          // child: const Center(
+          //   child: Text(
+          //     'Profile Screen',
+          //     style: TextStyle(color: Colors.white, fontSize: 24.0),
+          //   ),
+          // ),
+        ),
       ),
-      backgroundColor: Colors.grey[300],
-      body: _buildUserList(context),
-      // body: const Padding(
-      //   padding: EdgeInsets.symmetric(horizontal: 25.0),
-      //   child: SafeArea(
-      //       child: Center(
-      //     child: Column(
-      //       mainAxisAlignment: MainAxisAlignment.center,
-      //       children: [],
-      //     ),
-      //   )),
-      // ),
     );
   }
 

@@ -1,5 +1,5 @@
-import 'package:chatflut/screens/home_screen.dart';
 import 'package:chatflut/screens/login_screen.dart';
+import 'package:chatflut/screens/main_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +15,7 @@ class AuthGate extends StatelessWidget {
         builder: (context, snapshot){
           //user is login
           if(snapshot.hasData){
-            return const MainScreen();
+            return  MainScreen();
           }
           //user is not login
           else{

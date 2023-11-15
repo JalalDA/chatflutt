@@ -1,5 +1,6 @@
 import 'package:chatflut/components/cs_button.dart';
 import 'package:chatflut/components/cs_text_field.dart';
+// import 'package:chatflut/screens/home_screen.dart';
 import 'package:chatflut/screens/login_screen.dart';
 import 'package:chatflut/services/auth/auth_service.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +37,7 @@ class RegisterScreen extends StatelessWidget {
         await authService.signUpWithEmailAndPassword(
             emailController.text, passwordController.text);
         // Navigator.of(context)
-        //     .push(MaterialPageRoute(builder: (ctx) => const LoginScreen()));
+        //     .push(MaterialPageRoute(builder: (ctx) => const MainScreen()));
       } catch (e) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(

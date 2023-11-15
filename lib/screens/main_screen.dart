@@ -1,4 +1,5 @@
 import 'package:chatflut/screens/chat_list_screen.dart';
+import 'package:chatflut/screens/post_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/services.dart';
@@ -12,8 +13,8 @@ class _MainScreenState extends State<MainScreen> {
   int _currentIndex = 0;
 
   final List<Widget> _screens = [
-    ScreenOne(),
-    ChatListScreen(),
+    PostScreen(),
+    const ChatListScreen(),
     ScreenTwo(),
   ];
 
@@ -47,33 +48,6 @@ class _MainScreenState extends State<MainScreen> {
   }
 }
 
-class ScreenOne extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-   return Scaffold(
-      body: AnnotatedRegion<SystemUiOverlayStyle>(
-        value: SystemUiOverlayStyle.light.copyWith(
-          statusBarColor: Colors.transparent, // Status bar transparan
-        ),
-        child: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [Colors.blue, Colors.green],
-            ),
-          ),
-          child: Center(
-            child: Text(
-              'Main Screen',
-              style: TextStyle(color: Colors.white, fontSize: 24.0),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
 
 class ScreenTwo extends StatelessWidget {
   @override
